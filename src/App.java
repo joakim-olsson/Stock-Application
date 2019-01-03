@@ -25,7 +25,7 @@ public class App {
         Scanner scanner = new Scanner(System.in);
 
         try {
-            System.out.println("What stock do you want to look at?");
+            System.out.print("Input a stock symbol: ");
             String input = scanner.nextLine();
             IntraDay response = stockTimeSeries.intraDay(input, Interval.ONE_MIN, OutputSize.COMPACT);
             Map<String, String> metaData = response.getMetaData();
@@ -42,7 +42,7 @@ public class App {
                 System.out.println("volume: " + stock.getVolume());
             });
         } catch (AlphaVantageException e) {
-            System.out.println("something went wrong");
+            System.out.println("Not a valid symbol.");
         }
     }
 }
