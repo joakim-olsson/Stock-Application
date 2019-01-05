@@ -22,7 +22,7 @@ import java.util.Scanner;
 public class App {
     public static void main(String[] args) {
         String apiKey = "Your apikey"; // apikey from AlphaVantage
-        int timeout = 1500;
+        int timeout = 2000;
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
         TimeSeries stockTimeSeries = new TimeSeries(apiConnector);
 
