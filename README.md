@@ -1,4 +1,4 @@
-# Stock-Application
+# Stock Application
 
 An application for stocks.
 
