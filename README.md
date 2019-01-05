@@ -1,11 +1,14 @@
 # Stock Application
 
-An application for stocks.
+An application created in Java used for fetching stock data using Alpha Vantage.
 
-Created with Alpha Vantage's free api's.
+Alpha Vantage is a leading provider of free APIs for realtime and historical data on stocks and digital/crypto currencies.
 
-Alpha Vantage: https://www.alphavantage.co/
+Link to Alpha Vantage: https://www.alphavantage.co/
+Link to generate Alpha Vantage api key: https://www.alphavantage.co/support/#api-key
 
-Made by using a java wrapper made by patriques82: https://github.com/patriques82/alphavantage4j
+Made with an Alpha Vantage Java wrapper made by patriques82.
+
+Link to Java wrapper: https://github.com/patriques82/alphavantage4j
 
 
