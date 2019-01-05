@@ -11,4 +11,9 @@ Made with an Alpha Vantage Java wrapper made by patriques82.
 
 Link to Java wrapper: https://github.com/patriques82/alphavantage4j
 
+To use the application:
 
+Download the Java wrapper, build the jar file and include it in the library.
+If you build with Maven you will need to download an additional gson jar and also include it in the library.
+
+Download link for gson: https://repo1.maven.org/maven2/com/google/code/gson/gson/2.6.2/
