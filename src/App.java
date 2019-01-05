@@ -16,7 +16,7 @@ import java.util.Scanner;
  */
 
 /**
- * An app asking the user for a stock symbol and returns information about that stock. (Date, High/Low price, Volume etc.) 
+ * An app asking the user for a stock symbol and returns information about that stock. (Date, High/Low price and Volume etc.) 
  */
 
 public class App {
