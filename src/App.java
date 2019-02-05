@@ -15,10 +15,14 @@ import java.util.Scanner;
  * 2019-01-03
  */
 
+/**
+ * An app asking the user for a stock symbol and returns information about that stock. (Date, High/Low price and Volume etc.) 
+ */
+
 public class App {
     public static void main(String[] args) {
-        String apiKey = "PG7CBC5EW4MYU288";
-        int timeout = 1500;
+        String apiKey = "Your apikey"; // apikey from AlphaVantage
+        int timeout = 2000;
         AlphaVantageConnector apiConnector = new AlphaVantageConnector(apiKey, timeout);
         TimeSeries stockTimeSeries = new TimeSeries(apiConnector);
 
