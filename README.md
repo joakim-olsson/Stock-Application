@@ -14,6 +14,6 @@ Link to Java wrapper: https://github.com/patriques82/alphavantage4j
 ### How to use the application:
 
 **Download the Java wrapper, build the jar file and include it in the library.
-If you decide to build the jar file with Maven you will need to download an additional gson jar and also include it in the library. Then call the main method in the App.java file.**
+If you decide to build the jar file with Maven like I have, you will need to download an additional gson jar and also include it in the library. Then call the main method in the App.java file.**
 
 Download link for the gson jar: https://repo1.maven.org/maven2/com/google/code/gson/gson/2.6.2/
