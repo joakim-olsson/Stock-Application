@@ -13,7 +13,10 @@ Link to Java wrapper: https://github.com/patriques82/alphavantage4j
 
 ### How to use the application:
 
-**Download the Java wrapper, build the jar file and include it in the library.
-If you decide to build the jar file with Maven like I have, you will need to download an additional gson jar and also include it in the library. Then call the main method in the App.java file.**
+Run the main method in the "App" class
 
-Download link for the gson jar: https://repo1.maven.org/maven2/com/google/code/gson/gson/2.6.2/
+### FAQ
+
+#### Q: Why does the application show the stock price for 16:00 yesterday?
+
+#### A: This is because the time is timezone is set to US eastern time. If it shows yesterdays date 16:00 then it means that the stock market in US hasn't opened yet and the most recent price of that stock was yesterday when the market closed for the day.
