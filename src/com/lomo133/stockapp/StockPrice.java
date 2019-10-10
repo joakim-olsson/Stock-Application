@@ -108,7 +108,7 @@ public class StockPrice {
 
     public String getRandomSymbol() {
         List<String> list = null;
-        try (Stream<String> lines = Files.lines(Paths.get("/home/lomo133/projects/Stock-Application/src/stocklist/stocksymbols.txt"))) {
+        try (Stream<String> lines = Files.lines(Paths.get("src/stocklist/stocksymbols.txt"))) {
             list = lines.collect(Collectors.toList());
         } catch (IOException e) {
             System.out.println("Path to symbol text file is wrong" + e);
