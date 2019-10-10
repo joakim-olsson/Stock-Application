@@ -1,3 +1,5 @@
+package com.lomo133.stockapp;
+
 import org.patriques.AlphaVantageConnector;
 import org.patriques.TimeSeries;
 import org.patriques.input.timeseries.Interval;
@@ -6,7 +8,12 @@ import org.patriques.output.AlphaVantageException;
 import org.patriques.output.timeseries.IntraDay;
 import org.patriques.output.timeseries.data.StockData;
 
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 /**
  * @Author Joakim Olsson <lomo133>
@@ -30,6 +37,14 @@ public class StockPrice {
         stockData = response.getStockData();
     }
 
+    public StockPrice() {
+        this.symbol = getRandomSymbol();
+        apiConnector = new AlphaVantageConnector(apiKey, timeout);
+        stockTimeSeries = new TimeSeries(apiConnector);
+        response = stockTimeSeries.intraDay(this.symbol, Interval.ONE_MIN, OutputSize.FULL);
+        stockData = response.getStockData();
+    }
+
     public void symbolOutput(String symbol) {
         String apiKey = "PG7CBC5EW4MYU288";
         int timeout = 3000;
@@ -40,12 +55,10 @@ public class StockPrice {
 
         try {
             IntraDay response = stockTimeSeries.intraDay(symbol, Interval.THIRTY_MIN, OutputSize.FULL);
-            //Map<String, String> metaData = response.getMetaData();
-            //System.out.println("Information: " + metaData.get("1. Information"));
-            //System.out.println("Stock: " + metaData.get("2. Symbol"));
-            //System.out.println("time zone: " + metaData.get("6. Time Zone"));
-            List<StockData> stockData = response.getStockData();
-            //System.out.println(metaData.keySet());
+            Map<String, String> metaData = response.getMetaData();
+            for (String key : metaData.keySet()) {
+                System.out.println(metaData.get(key));
+            }
 
             System.out.println(stockData.get(0).getHigh());
             System.out.println(stockData.get(0).getLow());
@@ -89,9 +102,29 @@ public class StockPrice {
         return stockData.get(0).getDateTime().toString();
     }
 
-//    public String randomizeSymbol() {
-//        Random rnd = new Random();
-//        List<String> keysAsArray = new ArrayList<>(symbols.keySet());
-//        return keysAsArray.get(rnd.nextInt(keysAsArray.size()));
+    public String getSymbol() {
+        return symbol;
+    }
+
+    public String getRandomSymbol() {
+        List<String> list = null;
+        try (Stream<String> lines = Files.lines(Paths.get("/home/lomo133/projects/Stock-Application/src/stocklist/stocksymbols.txt"))) {
+            list = lines.collect(Collectors.toList());
+        } catch (IOException e) {
+            System.out.println("Path to symbol text file is wrong" + e);
+        }
+        return list.get(getRandomElement(list));
+    }
+
+    public int getRandomElement(List<String> list) {
+        Random rnd = new Random();
+        return rnd.nextInt(list.size());
+
+    }
+
+//    public static void main(String args[]) {
+//        StockPrice test = new StockPrice("msft");
+//        test = new StockPrice("m");
+//        System.out.println(test.getRandomSymbol());
 //    }
 }
