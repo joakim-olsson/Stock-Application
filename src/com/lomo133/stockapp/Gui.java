@@ -1,11 +1,11 @@
-import java.awt.EventQueue;
-import javax.swing.JFrame;
-import javax.swing.JTextField;
-import javax.swing.JLabel;
+package com.lomo133.stockapp;
+
+import javax.swing.*;
 import java.awt.Font;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
+import java.awt.event.*;
 import java.io.FileNotFoundException;
+
+import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
 
 public class Gui {
@@ -13,7 +13,6 @@ public class Gui {
     private JFrame frame;
     private JTextField txtCorporation;
     private StockPrice sym;
-
     /**
      * Create the application.
      */
@@ -28,7 +27,7 @@ public class Gui {
     private void initialize() {
         frame = new JFrame();
         frame.setBounds(100, 100, 450, 300);
-        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
         frame.getContentPane().setLayout(null);
 
 
@@ -53,29 +52,28 @@ public class Gui {
         lblDate.setBounds(33, 137, 225, 15);
         frame.getContentPane().add(lblDate);
 
-//        JButton btnRandomize = new JButton("Randomize");
-//        btnRandomize.addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mouseClicked(MouseEvent e) {
-//                txtCorporation.setText(db.randomizeSymbol());
-//                lblCorporationsName.setText(txtCorporation.getText().substring(0, 1).toUpperCase() + txtCorporation.getText().substring(1));
-//                System.out.println(db.getValue(txtCorporation.getText()).toUpperCase());
-//                lblHigh.setText("High: " + sym.getHigh() + "$");
-//                lblLow.setText("Low " + sym.getLow() + "$");
-//                lblVolume.setText("Volume: " + sym.getVolume());
-//                lblDate.setText("Date: " + sym.getDate());
-//            }
-//        });
-//        btnRandomize.setBounds(227, 227, 112, 23);
-//        frame.getContentPane().add(btnRandomize);
+        JButton btnRandomize = new JButton("Randomize");
+        btnRandomize.setBounds(227, 227, 112, 23);
+        frame.getContentPane().add(btnRandomize);
+        btnRandomize.addMouseListener(new MouseAdapter() {
+            @Override
+            public void mouseClicked(MouseEvent e) {
+                sym = new StockPrice();
+                lblCorporationsName.setText(sym.getSymbol().toUpperCase());
+                lblHigh.setText("High: " + sym.getHigh() + "$");
+                lblLow.setText("Low " + sym.getLow() + "$");
+                lblVolume.setText("Volume: " + sym.getVolume());
+                lblDate.setText("Date: " + sym.getDate());
+            }
+        });
 
         txtCorporation = new JTextField();
         txtCorporation.addKeyListener(new KeyAdapter() {
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode()==KeyEvent.VK_ENTER){
-                    //input.substring(0, 1).toUpperCase() + input.substring(1);
                     sym = new StockPrice(txtCorporation.getText());
+                    lblCorporationsName.setText(sym.getSymbol().toUpperCase());
                     lblHigh.setText("High: " + sym.getHigh() + "$");
                     lblLow.setText("Low " + sym.getLow() + "$");
                     lblVolume.setText("Volume: " + sym.getVolume());
@@ -83,7 +81,14 @@ public class Gui {
                 }
             }
         });
-        txtCorporation.setText("Corporations name");
+        txtCorporation.setText("Corporation symbol");
+        txtCorporation.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent keyEvent) {
+                txtCorporation.setText("");
+                txtCorporation.removeKeyListener(this);
+            }
+        });
         txtCorporation.setBounds(84, 228, 131, 20);
         frame.getContentPane().add(txtCorporation);
         txtCorporation.setColumns(10);

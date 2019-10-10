@@ -1,3 +1,5 @@
+package com.lomo133.stockapp;
+
 import java.io.FileNotFoundException;
 
 /**
@@ -11,6 +13,6 @@ public class App {
      * Starting point for the application.
      */
     public static void main(String[] args) throws FileNotFoundException {
-        Gui start = new Gui();
+        new Gui();
     }
 }

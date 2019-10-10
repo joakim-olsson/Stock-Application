@@ -1,0 +1,31 @@
+
+O
+squid:S106)"9Replace this use of System.out or System.err by a logger.(…¦ñÕ
+Asquid:S1068"*Remove this unused "symbol" private field.(×¥±¥
+\squid:HiddenFieldCheck$":Rename "apiKey" which hides the field declared at line 19.(ëˆ½µ
+T
+squid:S1068"9Replace this use of System.out or System.err by a logger.(Ë£Å±üÿÿÿÿ
+T
+squid:S1067"9Replace this use of System.out or System.err by a logger.(Àß»Ëúÿÿÿÿ
+N
+squid:S1069"9Replace this use of System.out or System.err by a logger.(‚´¤G
+gsquid:CommentedOutCodeLine-"<This block of commented-out lines of code should be removed.(Í²ÉÕþÿÿÿÿ
+bsquid:CommentedOutCodeLine="<This block of commented-out lines of code should be removed.(È€œº
+gsquid:CommentedOutCodeLineA"<This block of commented-out lines of code should be removed.(ˆÏŒÀÿÿÿÿÿ
+O
+squid:S1064"9Replace this use of System.out or System.err by a logger.(±­ÞÍ
+T
+squid:S106K"9Replace this use of System.out or System.err by a logger.(¢—½šùÿÿÿÿ
+\squid:HiddenFieldCheck%";Rename "timeout" which hides the field declared at line 20.(Âý©
+gsquid:HiddenFieldCheck&"@Rename "apiConnector" which hides the field declared at line 21.(—ùÉ•úÿÿÿÿ
+^squid:HiddenFieldCheck,"<Rename "response" which hides the field declared at line 23.(ÿŒ¡£
+gsquid:CommentedOutCodeLine2"<This block of commented-out lines of code should be removed.(ŸŠ¯çüÿÿÿÿ
+O
+squid:S1065"9Replace this use of System.out or System.err by a logger.(®ÔñÞ
+esquid:HiddenFieldCheck'"CRename "stockTimeSeries" which hides the field declared at line 22.(ÀÑ¾Ì
+O
+squid:S106;"9Replace this use of System.out or System.err by a logger.(¼ÍÂ¡
+gsquid:CommentedOutCodeLine^"<This block of commented-out lines of code should be removed.(ÆüŸ¯þÿÿÿÿ
+T
+squid:S1066"9Replace this use of System.out or System.err by a logger.(£ö…ôùÿÿÿÿ
+dsquid:HiddenFieldCheck1"=Rename "stockData" which hides the field declared at line 24.(¨¯€Øþÿÿÿÿ
