@@ -1,3 +1,5 @@
+package com.lomo133.stockapp;
+
 //import java.util.Scanner;
 //
 ///**
