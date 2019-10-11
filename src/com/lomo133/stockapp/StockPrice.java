@@ -33,7 +33,7 @@ public class StockPrice {
         this.symbol = sym;
         apiConnector = new AlphaVantageConnector(apiKey, timeout);
         stockTimeSeries = new TimeSeries(apiConnector);
-        response = stockTimeSeries.intraDay(sym, Interval.ONE_MIN, OutputSize.FULL);
+        response = stockTimeSeries.intraDay(this.symbol, Interval.ONE_MIN, OutputSize.FULL);
         stockData = response.getStockData();
     }
 
@@ -68,20 +68,6 @@ public class StockPrice {
             System.out.println(stockData.get(389).getDateTime());
 
             System.out.println(stockData.size());
-
-            //System.out.println(stockData.get(stockData.size()-1).getDateTime());
-
-
-//
-//            List<StockData> stockData = response.getStockData();
-//            stockData.forEach(stock -> {
-//                System.out.println("date:   " + stock.getDateTime());
-//                System.out.println("open:   " + stock.getOpen());
-//                System.out.println("high:   " + stock.getHigh());
-//                System.out.println("low:    " + stock.getLow());
-//                System.out.println("close:  " + stock.getClose());
-//                System.out.println("volume: " + stock.getVolume());
-//            });
         } catch (AlphaVantageException e) {
             System.out.println("something went wrong");
         }

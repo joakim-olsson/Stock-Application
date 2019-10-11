@@ -3,7 +3,6 @@ package com.lomo133.stockapp;
 import javax.swing.*;
 import java.awt.Font;
 import java.awt.event.*;
-import java.io.FileNotFoundException;
 
 import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
 
@@ -16,7 +15,7 @@ public class Gui {
     /**
      * Create the application.
      */
-    public Gui() throws FileNotFoundException {
+    public Gui() {
         initialize();
         frame.setVisible(true);
     }
