@@ -13,7 +13,7 @@ Link to Java wrapper: https://github.com/patriques82/alphavantage4j
 
 ### How to use the application:
 
-Run the main method in the "App" class
+Run the main method in the "App" class and make sure to include the .jar dependencies when compiling the project.
 
 ### FAQ
 
